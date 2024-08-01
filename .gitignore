@@ -11,5 +11,10 @@ project/*
 # Build Server Protocol Stuff
 .bsp/*
 
+# Some other files that I need to find out what they are about and why they are crated.
+src/main/scala/target/
+src/main/scala/.bsp/
+
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
