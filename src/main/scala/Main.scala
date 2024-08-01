@@ -1,5 +1,3 @@
-import util.CommandLineParser
-
 @main def slox(args: String*): Unit = {
   args.toList match
     case scriptName :: Nil => runFile(scriptName)
