@@ -1,5 +1,14 @@
-@main def hello(): Unit =
-  println("Hello world!")
-  println(msg)
+import util.CommandLineParser
 
-def msg = "I was compiled by Scala 3. :)"
+@main def slox(args: String*): Unit = {
+  args.toList match
+    case scriptName :: Nil => runFile(scriptName)
+    case Nil => runPrompt()
+    case _ => println(Usage)  // TODO: Make suitable throwable.
+}
+
+val Usage: String = "Usage: slox [script]"
+
+def runFile(fileName: String): Unit = ???
+
+def runPrompt(): Unit = ???
