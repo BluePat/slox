@@ -1,6 +1,6 @@
 package exceptions
 
-import utils.SysExits.ExUsage
+import utils.ExitCodes.ExUsage
 import utils.MethodInsight.getCurrentMethodName
 
 val Usage: String = "Usage: slox [script]"
