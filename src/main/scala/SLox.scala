@@ -21,6 +21,8 @@ def runFile(fileName: String): Unit = ???
 
 def runPrompt(): Unit = ???
 
+def run(command: String): Unit = ???
+
 def exitSLox(): Unit = {
   System.out.println("Successful termination.")
   System.exit(ExOk)
