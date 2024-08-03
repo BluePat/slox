@@ -1,12 +1,12 @@
 package exceptions
 
 import utils.ExitCodes.ExUsage
-import utils.MethodInsight.getCurrentMethodName
 
 val Usage: String = "Usage: slox [script]"
+val ExitMessage = "Incorrect usage of CLI"
 
 case class UsageException(override val exitCode: Int = ExUsage,
-                          override val exitMessage: String,
+                          override val exitMessage: String = ExitMessage,
                           protected val usage: String = Usage
                          ) extends SLoxException {
 
