@@ -1,7 +1,10 @@
+import exceptions.GeneralConstants.Prompt
 import exceptions.{SLoxException, UsageException}
 import utils.ExitCodes.ExOk
 
-import scala.util.{Success, Failure, Try}
+import scala.io.{Source, StdIn}
+import scala.annotation.tailrec
+import scala.util.{Failure, Success, Try, Using}
 
 @main def slox(args: String*): Unit = {
   Try {
@@ -17,9 +20,21 @@ import scala.util.{Success, Failure, Try}
   }
 }
 
-def runFile(fileName: String): Unit = ???
+def runFile(scriptName: String): Unit = {
+  // Performs an operation on a resource and then releases it.
+  Using( Source.fromFile(scriptName) ) {
+    script => run(script.mkString)
+  }
+}
 
-def runPrompt(): Unit = ???
+@tailrec def runPrompt(): Unit = {
+  print(Prompt)
+  StdIn.readLine() match
+    case null => { /* Stop processing further inputs -- End of input stream has been reached. */ }
+    case command => run(command)
+
+  runPrompt()
+}
 
 def run(command: String): Unit = ???
 
