@@ -1,4 +1,4 @@
-package exceptions
+package utils
 
 object GeneralConstants {
   val Prompt = "> "

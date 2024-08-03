@@ -1,4 +1,4 @@
-import exceptions.GeneralConstants.Prompt
+import utils.GeneralConstants.Prompt
 import exceptions.{SLoxException, UsageException}
 import utils.ExitCodes.ExOk
 
